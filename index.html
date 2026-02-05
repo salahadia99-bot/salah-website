@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Salah Website</title>
+
+<style>
+:root{
+  --bg1:#1e3c72;
+  --bg2:#2a5298;
+  --text:#ffffff;
+  --box:rgba(255,255,255,0.15);
+  --accent:#00ffd5;
+}
+
+body.light{
+  --bg1:#f2f2f2;
+  --bg2:#d9e2ec;
+  --text:#222;
+  --box:#ffffff;
+  --accent:#0f4c81;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
+  color:var(--text);
+  scroll-behavior:smooth;
+}
+
+/* MENU */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(0,0,0,0.4);
+  padding:15px 0;
+  text-align:center;
+  z-index:1000;
+}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  margin:0 18px;
+  font-weight:bold;
+}
+
+nav a:hover{color:var(--accent);}
+
+/* TOGGLE */
+.toggle{
+  position:fixed;
+  right:15px;
+  top:12px;
+  background:var(--accent);
+  color:#003;
+  border:none;
+  padding:8px 14px;
+  border-radius:20px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+/* SECTIONS */
+section{
+  min-height:100vh;
+  padding:120px 20px 60px;
+  text-align:center;
+}
+
+h1{font-size:32px}
+
+/* PROFILE */
+.profile img{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  border:5px solid var(--accent);
+  object-fit:cover;
+  margin-top:30px;
+}
+
+/* BOX */
+.box{
+  background:var(--box);
+  width:70%;
+  margin:40px auto;
+  padding:25px;
+  border-radius:15px;
+}
+
+/* SKILLS */
+.skill{
+  text-align:left;
+  margin:15px 0;
+}
+
+.skill span{
+  font-weight:bold;
+}
+
+.bar{
+  background:#ccc;
+  border-radius:10px;
+  overflow:hidden;
+  margin-top:5px;
+}
+
+.bar div{
+  height:12px;
+  background:var(--accent);
+}
+
+/* FORM */
+form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+input,textarea{
+  padding:12px;
+  border-radius:8px;
+  border:none;
+}
+
+button{
+  padding:12px;
+  background:var(--accent);
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .box{width:90%}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<button class="toggle" onclick="toggleMode()">🌙 / ☀️</button>
+
+<section id="home">
+  <h1>Web Beginner & Future Developer</h1>
+  <div class="profile">
+    <img src="images/person.jpg" alt="Salah">
+  </div>
+</section>
+
+<section id="about">
+  <div class="box">
+    <p>Hello! My name is <strong>Salah</strong>. I am learning web development using HTML and CSS.</p>
+    <p>My goal is to become a professional web developer.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h1>My Skills</h1>
+  <div class="box">
+    <div class="skill">
+      <span>HTML</span>
+      <div class="bar"><div style="width:90%"></div></div>
+    </div>
+    <div class="skill">
+      <span>CSS</span>
+      <div class="bar"><div style="width:80%"></div></div>
+    </div>
+    <div class="skill">
+      <span>JavaScript</span>
+      <div class="bar"><div style="width:50%"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h1>Contact Me</h1>
+  <div class="box">
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button>Send Message</button>
+    </form>
+  </div>
+</section>
+
+<script>
+function toggleMode(){
+  document.body.classList.toggle("light");
+}
+</script>
+
+</body>
+</html>
